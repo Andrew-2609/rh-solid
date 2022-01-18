@@ -18,6 +18,11 @@ public class Funcionario {
         this.salario = salario;
     }
 
+    public void atualizarSalario(BigDecimal novoSalario) {
+        this.salario = novoSalario;
+        this.dataDoUltimoReajuste = LocalDate.now();
+    }
+
     public String getNome() {
         return nome;
     }

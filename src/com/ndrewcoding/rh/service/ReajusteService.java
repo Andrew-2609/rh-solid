@@ -5,7 +5,6 @@ import com.ndrewcoding.rh.model.Funcionario;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.time.LocalDate;
 
 public class ReajusteService {
 
@@ -16,8 +15,8 @@ public class ReajusteService {
             throw new ValidacaoException("Reajuste não pode ser superior à 40%");
         }
 
-        funcionario.setSalario(funcionario.getSalario().add(aumento));
-        funcionario.setDataDoUltimoReajuste(LocalDate.now());
+        BigDecimal novoSalario = salarioAtual.add(aumento);
+        funcionario.atualizarSalario(novoSalario);
     }
 
 }

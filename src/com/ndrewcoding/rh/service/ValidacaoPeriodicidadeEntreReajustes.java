@@ -7,8 +7,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class ValidacaoPeriodicidadeEntreReajustes {
+public class ValidacaoPeriodicidadeEntreReajustes implements ValidacaoReajuste {
 
+    @Override
     public void validar(Funcionario funcionario, BigDecimal aumento) {
         LocalDate dataDoUltimoReajuste = funcionario.getDataDoUltimoReajuste();
         LocalDate dataAtual = LocalDate.now();

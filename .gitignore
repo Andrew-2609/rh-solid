@@ -1,0 +1,6 @@
+# IntelliJ IDEA
+.idea/
+rh-solid.iml
+
+# Generated files
+out/

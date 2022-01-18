@@ -1,9 +1,6 @@
 package com.ndrewcoding.rh.model;
 
-import com.ndrewcoding.rh.ValidacaoException;
-
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Funcionario {
@@ -19,16 +16,6 @@ public class Funcionario {
         this.cpf = cpf;
         this.cargo = cargo;
         this.salario = salario;
-    }
-
-    public void reajustarSalario(BigDecimal aumento) {
-        BigDecimal percentualDeReajuste = aumento.divide(salario, RoundingMode.HALF_UP);
-        if (percentualDeReajuste.compareTo(new BigDecimal("0.4")) > 0) {
-            throw new ValidacaoException("Reajuste não pode ser superior à 40%");
-        }
-
-        this.salario = this.salario.add(aumento);
-        this.dataDoUltimoReajuste = LocalDate.now();
     }
 
     public String getNome() {

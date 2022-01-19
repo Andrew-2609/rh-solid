@@ -1,4 +1,4 @@
-package com.ndrewcoding.rh.service;
+package com.ndrewcoding.rh.service.reajuste;
 
 import com.ndrewcoding.rh.model.Funcionario;
 

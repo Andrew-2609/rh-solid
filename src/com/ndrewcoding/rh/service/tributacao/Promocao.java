@@ -3,7 +3,7 @@ package com.ndrewcoding.rh.service.tributacao;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Promocao implements Reajuste {
+public class Promocao implements Reajuste, ReajusteTributavel {
 
     private final BigDecimal valor;
     private final LocalDate data;
@@ -21,6 +21,11 @@ public class Promocao implements Reajuste {
     @Override
     public LocalDate data() {
         return data;
+    }
+
+    @Override
+    public BigDecimal valorImpostoDeRenda() {
+        return valor.multiply(new BigDecimal("0.1"));
     }
 
 }
